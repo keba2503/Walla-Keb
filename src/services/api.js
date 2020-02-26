@@ -1,5 +1,8 @@
 const apiUrl = 'http://34.89.93.186:8080/apiv1';
 
+
+//Register
+
 export const registerApi = async (username, password) => {
     try {
         const registerUrl = `${apiUrl}/register`;
@@ -20,6 +23,8 @@ export const registerApi = async (username, password) => {
     }
 }
 
+//Login
+
 export const loginApi = async (username, password) => {
     try {
         const loginUrl = `${apiUrl}/login`;
@@ -39,3 +44,24 @@ export const loginApi = async (username, password) => {
         console.error(error);
     }
 }
+
+
+//Anuncios
+
+export const adApi = async () => {
+    try {
+        const adUrl = `${apiUrl}/anuncios`;
+
+        const response = await fetch(adUrl, {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+            credentials: 'include'
+        });
+        const adJson = await response.json()
+        return adJson;
+    } catch (error) {
+        console.error(error);
+    }
+    console.log(adApi)
+}
+
