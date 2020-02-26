@@ -6,7 +6,9 @@ import {
   Redirect,
 } from 'react-router-dom';
 
+
 import Register from './components/register';
+import Login from './components/login';
 
 
 function App() {
@@ -14,7 +16,8 @@ function App() {
     <Router>
           <Switch>
             <Route path="/register" component={Register} />
-          <Redirect to="/register" />
+            <Route path="/login" component={Login} />       
+          <Redirect to="/login" />
       </Switch>
     </Router>
   );

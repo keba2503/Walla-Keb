@@ -19,3 +19,23 @@ export const registerApi = async (username, password) => {
         console.error(error);
     }
 }
+
+export const loginApi = async (username, password) => {
+    try {
+        const loginUrl = `${apiUrl}/login`;
+
+        const response = await fetch(loginUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                username: `${username}`,
+                password: `${password}`
+            }),
+            credentials: 'include'
+        });
+        const loginJson = await response.json()
+        return loginJson;
+    } catch (error) {
+        console.error(error);
+    }
+}

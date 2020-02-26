@@ -49,15 +49,10 @@ body :-ms-input-placeholder {
 }
 .wrapper {
   background: #50a3a2;
-  background: -webkit-gradient(linear, left top, right bottom, from(#50a3a2), to(#53e3a6));
-  background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 400px;
-  margin-top: -200px;
-  overflow: hidden;
+  background: -webkit-gradient(linear, left top, right bottom, from(#9297C4), to(#9368B7));
+  background: linear-gradient(to bottom right, #AA3E98 0%, #A23E48 100%);
+  height: 100vh;
+
 }
 .wrapper.form-success .container h1 {
   -webkit-transform: translateY(85px);
@@ -115,10 +110,11 @@ form button {
      -moz-appearance: none;
           appearance: none;
   outline: 0;
+  margin-top: 10px;
   background-color: white;
   border: 0;
   padding: 10px 15px;
-  color: #53e3a6;
+  color: #403D58;
   border-radius: 3px;
   width: 250px;
   cursor: pointer;
