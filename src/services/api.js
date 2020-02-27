@@ -62,6 +62,6 @@ export const adApi = async () => {
     } catch (error) {
         console.error(error);
     }
-    console.log(adApi)
+   
 }
 

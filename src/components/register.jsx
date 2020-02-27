@@ -3,11 +3,16 @@ import { registerApi } from '../services/api';
 import '../App.css';
 
   
+
+  
 export default class Register extends Component {
-  state = {
+  constructor(props) {
+    super(props);
+    this.state = {
     username:'',
     password: '',
   };
+}
 
   Submit = async (evt) => {
     evt.preventDefault();
@@ -20,6 +25,7 @@ export default class Register extends Component {
     }
 
   };
+
  Input = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -74,4 +80,5 @@ export default class Register extends Component {
     );
         }
       
-      }
+     
+    }

@@ -3,11 +3,14 @@ import { loginApi } from '../services/api';
 import {  Link } from 'react-router-dom';
 import '../App.css';
 
-export default class Login extends Component {
-    state = {
-      username:'',
-      password: '',
-    };
+export default class Register extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    username:'',
+    password: '',
+  };
+}
   
     Submit = async (evt) => {
       evt.preventDefault();
@@ -35,12 +38,12 @@ export default class Login extends Component {
     render() {
         return (
             <div className='wrapper'>
-                <div class="container">
+                <div className="container">
                     <h1>Walla-Keb</h1>
                     <br></br>
                     <h2>Login</h2>
 
-                    <form class='form' onSubmit={this.Submit}>
+                    <form className='form' onSubmit={this.Submit}>
                         <div>
                             <label name="username">Username:</label>
                             <input name="username" type="text" onChange={this.Input} />
@@ -50,16 +53,16 @@ export default class Login extends Component {
                             <input name="password" type="password" onChange={this.Input} />
                         </div>
                         <div>
-                            <button id='login-button'>Login</button>
+                            <button className='login-button'>Login</button>
                             <br></br>
                             <Link to='/register'>
-                                <button class='login-button'>New Register</button>
+                                <button className='login-button'>New Register</button>
                             </Link>
                         </div>
                     </form>
 
                 </div>
-                <ul class="bg-bubbles">
+                <ul className="bg-bubbles">
                     <li></li>
                     <li></li>
                     <li></li>
