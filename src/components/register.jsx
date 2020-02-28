@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { registerApi } from '../services/api';
 import '../App.css';
 
-  
-
-  
 export default class Register extends Component {
   constructor(props) {
     super(props);
@@ -17,8 +14,7 @@ export default class Register extends Component {
   Submit = async (evt) => {
     evt.preventDefault();
     const register = await registerApi(this.state.username, this.state.password);
-    console.log(register);
-    if (register.success) {
+     if (register.success) {
       this.props.history.push('/login');
     } else {
       alert(register.error);
@@ -40,7 +36,6 @@ export default class Register extends Component {
       });
     }
   };
-
 
   render() {
     return (
@@ -64,21 +59,21 @@ export default class Register extends Component {
             </div>
           </form>
         </div>
-            <ul className="bg-bubbles">
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
+        <ul className="bg-bubbles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
       </div>
     );
-        }
-      
-     
-    }
+  }
+
+
+}

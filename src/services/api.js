@@ -65,3 +65,11 @@ export const adApi = async () => {
    
 }
 
+//Tags
+
+export const tags = async () => {
+    const tagsad = `${apiUrl}/tags`;  
+    const response = await fetch(tagsad);
+    const json = await response.json();
+    return json.results;
+  };
