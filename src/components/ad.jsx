@@ -33,12 +33,10 @@ export default class Ads extends Component {
     if (ads !== '') {
 
       return (
-        <div>
+        <div>         
           <Adfilter></Adfilter>
           <Adcard data={ads}></Adcard>
         </div>
-
-
       );
     } else {
       return <div>Please wait a Moment.</div>;

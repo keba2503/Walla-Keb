@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { registerApi } from '../services/api';
 import '../App.css';
 
 
@@ -39,7 +38,6 @@ handleSelectChange = event => {
     const {tagsAd} = this.state;
     return (
       <div className='wrapper-2'>
-
         <div className="container-2">
           <h1>Walla-Keb</h1>
           <br></br>
@@ -49,19 +47,16 @@ handleSelectChange = event => {
               <label name="username">Ads</label>
               <input name="username" type="text" onChange={this.Input} />
             </div>
-          
             <div>
-              <link rel="stylesheet" href=""/>
+              <link rel="stylesheet" href="" />
               <button className='login-button'>Search</button>
-             <br/> 
-             <label className='login-button' htmlFor="">Tags:</label>
-             <select className='login-button' value={tagsAd} onChange={this.handleSelectChange}>
-          {TAGS.map(tagsAd => (
-            <option value={tagsAd.id}>{tagsAd.name}</option>
-          ))}
-                  </select>
-
-                  
+              <br />
+              <label className='login-button' htmlFor="">Tags:</label>
+              <select className='login-button' value={tagsAd} onChange={this.handleSelectChange}>
+                {TAGS.map(tagsAd => (
+                  <option value={tagsAd.id}>{tagsAd.name}</option>
+                ))}
+              </select>
             </div>
           </form>
         </div>

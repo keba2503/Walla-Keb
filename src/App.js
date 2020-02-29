@@ -21,7 +21,6 @@ function App() {
             <Route path="/login" component={Login} />  
             <Route path="/anuncios" component={Ads} />  
             <Route exact path="/detail/:_id" component={Details} />
-
           <Redirect to="/login" />
       </Switch>
     </Router>

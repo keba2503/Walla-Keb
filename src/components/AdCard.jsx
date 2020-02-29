@@ -5,13 +5,11 @@ import { Link } from "react-router-dom";
 export default class Adcard extends React.Component {
   state = {
     ads: this.props.data,
-
   };
-
 
   ad = this.state.ads.map((ad) => {
     return (
-   
+
   <li key className="cards__item">
     <div className="card">
       <div className="card__image"> <img src={ad.photo} alt="AdImage" /></div>

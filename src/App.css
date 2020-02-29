@@ -140,6 +140,9 @@ form input:focus {
 form button:hover {
   background-color: #f5f7f9;
 }
+.button-edit {
+  cursor: pointer;
+}
 .bg-bubbles {
   position: absolute;
   top: 0;
