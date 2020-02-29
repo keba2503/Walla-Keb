@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { adApi, tags } from '../services/api';
 import Adcard from './AdCard';
 import '../App.css';
+import Adfilter  from './filter'
 
 
 export default class Ads extends Component {
@@ -26,20 +27,22 @@ export default class Ads extends Component {
       return alert('Not logged in');
     }
   }
-  
-    render() 
-      {      
-      const {ads} = this.state
-      if (ads !== '') {       
-  
-        return (    
-     
-       <Adcard data={ads}></Adcard>
-     
-       );
-      } else {
-        return <div>Please wait a Moment.</div>;
-      }
+
+  render() {
+    const { ads } = this.state
+    if (ads !== '') {
+
+      return (
+        <div>
+          <Adfilter></Adfilter>
+          <Adcard data={ads}></Adcard>
+        </div>
+
+
+      );
+    } else {
+      return <div>Please wait a Moment.</div>;
     }
+  }
   }
   

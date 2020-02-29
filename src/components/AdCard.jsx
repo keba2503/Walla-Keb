@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 
 export default class Adcard extends React.Component {
   state = {
     ads: this.props.data,
+
   };
+
 
   ad = this.state.ads.map((ad) => {
     return (
@@ -21,7 +24,9 @@ export default class Adcard extends React.Component {
          Officia ratione corrupti facere porro eaque suscipit, iure esse in, sit dolore doloribus!  
         
          </p>
+         <Link to={`/detail/${ad._id}`}>
         <button className="btn btn--block card__btn">Detail</button>
+        </Link>
       </div>
     </div>
   </li>           

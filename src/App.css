@@ -54,6 +54,14 @@ body :-ms-input-placeholder {
   height: 100vh;
 
 }
+
+.wrapper-2{
+  background: #50a3a2;
+  background: -webkit-gradient(linear, left top, right bottom, from(#9297C4), to(#9368B7));
+  background: linear-gradient(to bottom right, #AA3E98 0%, #A23E48 100%);
+  height: 50vh;
+
+}
 .wrapper.form-success .container h1 {
   -webkit-transform: translateY(85px);
           transform: translateY(85px);
@@ -63,6 +71,13 @@ body :-ms-input-placeholder {
   margin: 0 auto;
   padding: 80px 0;
   height: 400px;
+  text-align: center;
+}
+.container-2 {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px 0;
+  height: 100px;
   text-align: center;
 }
 .container h1 {
@@ -222,6 +237,9 @@ body{
 
 
 
+
+
+
 *::after {
   box-sizing: border-box;
 }
@@ -252,6 +270,7 @@ height: 100%;
   color: #696969;
   padding: 0.5rem;
   text-transform: lowercase;
+  cursor: pointer;
 }
 .btn--block {
   display: block;
@@ -264,6 +283,7 @@ height: 100%;
   list-style: none;
   margin: 0;
   padding: 0;
+  
 }
 .cards__item {
   display: -webkit-box;
@@ -291,6 +311,9 @@ height: 100%;
   -webkit-box-direction: normal;
           flex-direction: column;
   overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 10px 10px 5px 0px rgba(77,5,77,1);
+  height: 100%;
 }
 .card:hover .card__image {
   -webkit-filter: contrast(100%);
@@ -343,6 +366,7 @@ height: 100%;
   font-size: 0.875rem;
   line-height: 1.5;
   margin-bottom: 1.25rem;
+
 }
 
 

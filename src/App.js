@@ -9,6 +9,9 @@ import {
 import Register from './components/register';
 import Login from './components/login';
 import Ads from './components/ad';
+import Details from './components/adDetail'
+
+
 
 function App() {
   return (
@@ -16,7 +19,9 @@ function App() {
           <Switch>
             <Route path="/register" component={Register} />
             <Route path="/login" component={Login} />  
-            <Route path="/anuncios" component={Ads} />       
+            <Route path="/anuncios" component={Ads} />  
+            <Route exact path="/detail/:_id" component={Details} />
+
           <Redirect to="/login" />
       </Switch>
     </Router>

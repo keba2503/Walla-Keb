@@ -51,7 +51,6 @@ export const loginApi = async (username, password) => {
 export const adApi = async () => {
     try {
         const adUrl = `${apiUrl}/anuncios`;
-
         const response = await fetch(adUrl, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' },
@@ -62,14 +61,49 @@ export const adApi = async () => {
     } catch (error) {
         console.error(error);
     }
-   
 }
 
 //Tags
 
 export const tags = async () => {
-    const tagsad = `${apiUrl}/tags`;  
-    const response = await fetch(tagsad);
+    const tagUrl = `${apiUrl}/tags`;  
+    const response = await fetch(tagUrl);
     const json = await response.json();
     return json.results;
   };
+
+
+  //// Filtrado de Anuncios
+
+export const filter = async (params) => {
+    const filterUrl = `${apiUrl}/anuncios?${params}`;
+    console.log(filterUrl);
+    const response = await fetch(filterUrl, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+    });
+    const json = await response.json();
+    return json;
+  };
+
+
+  ///detalle
+
+  export const adDetail = async id => {
+     try {
+        const detailUrl = `${apiUrl}/anuncios`;
+      const response = await fetch(`${detailUrl}/${id}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include'
+      });
+      const isadDetail = await response.json();
+
+      return isadDetail;
+    } catch (err) {
+      console.error(err);
+    }
+  }
