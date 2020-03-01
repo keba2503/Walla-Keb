@@ -28,6 +28,7 @@ export default class Ads extends Component {
       this.state = {
         ads: '',
         tags: '',
+        name: '',
         tagsAd: TAGS[0].id
       };
     }
@@ -46,16 +47,31 @@ export default class Ads extends Component {
     }
   }
 
- adChange = event => {
+  filterChange = event => {
     this.setState({ tagsAd: event.target.value });
   };
   
+  updateFilter = (evt) => {
+    this.setState({
+      [evt.target.name]: evt.target.value
+    })
+  }
 
-  render() {
-  
-    const {tagsAd, ads } = this.state;
+
+  filter = async (evt) => {
+    evt.preventDefault();
+    const apiFilter = `?${this.state.name ? `name=${this.state.name}&` : ''}`;
+    const results = await adApi(apiFilter);
+    this.setState(state => {
+      const ads = results.results
+      return { ads }
+    })
+  }
+
+  render() {  
+    const {tagsAd, ads, name } = this.state;
+
     if (ads !== '') {
-
       return (
         <div> 
 
@@ -64,24 +80,23 @@ export default class Ads extends Component {
               <h1>Walla-Keb</h1>
               <br></br>
               <h2>Search Ads</h2>
-              <form className='form' onSubmit={this.Submit}>
+              <form className='form' onSubmit={this.filter}>
                 <div>
                   <label name="username">Ads</label>
-                  <input name="username" type="text" onChange={this.Input} />
+                  <input type='text' name='name' value={name} onChange={this.updateFilter} />
+                  <button type='submit' >Search</button>
                 </div>
                 <div>
-                  <link rel="stylesheet" href="" />
-                  <button className='login-button'>Search</button>
+                  <link rel="stylesheet" href="" />                  
                   <br />
                   <label className='login-button' htmlFor="">Tags:</label>
-                  <select className='login-button' value={tagsAd} onChange={this.adChange}>
+                  <select className='login-button' value={tagsAd} onChange={this.filterChange}>
                     {TAGS.map(tagsAd => (
                       <option value={tagsAd.id}>{tagsAd.name}</option>
                     ))}
                   </select>
                 </div>
               </form>
-
             </div>
         <ul className="bg-bubbles">
           <li></li>
